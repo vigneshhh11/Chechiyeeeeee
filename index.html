@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -29,14 +30,18 @@
       overflow-x: hidden;
     }
 
+
     /* ================= HERO ================= */
 
     .hero {
       min-height: 100vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
+
       position: relative;
       padding: 30px;
 
@@ -49,108 +54,87 @@
         );
     }
 
+
     .hero-content {
       position: relative;
       z-index: 2;
+
       animation: fadeUp 1.5s ease;
     }
+
 
     .small-text {
       font-size: 14px;
       letter-spacing: 5px;
       text-transform: uppercase;
+
       opacity: 0.7;
+
       margin-bottom: 25px;
     }
+
 
     .birthday-title {
       font-family: "Anton", sans-serif;
       font-weight: 400;
+
       font-size: clamp(65px, 15vw, 150px);
+
       line-height: 0.95;
+
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
+
     .name {
       font-size: clamp(22px, 5vw, 40px);
+
       margin-top: 25px;
+
       letter-spacing: 6px;
+
       text-transform: uppercase;
     }
 
+
     .scroll-button {
       margin-top: 50px;
+
       display: inline-block;
+
       padding: 14px 28px;
+
       border: 1px solid rgba(255,255,255,0.5);
+
       border-radius: 50px;
+
       color: white;
+
       text-decoration: none;
+
       transition: 0.3s;
     }
+
 
     .scroll-button:hover {
       background: white;
       color: black;
+
       transform: translateY(-3px);
     }
 
-
-    /* ================= GALLERY ================= */
-
-    .gallery-section {
-      padding: 100px 8%;
-      background: #0c0c0c;
-    }
-
-    .section-title {
-      font-family: "Anton", sans-serif;
-      font-weight: 400;
-      font-size: 55px;
-      text-transform: uppercase;
-      margin-bottom: 50px;
-      text-align: center;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    /*
-      Original aspect ratio is preserved.
-      Images are NOT cropped or stretched.
-    */
-
-    .photo {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-
-      border-radius: 12px;
-
-      transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
-    }
-
-    .photo:hover {
-      transform: scale(1.025);
-    }
 
 
     /* ================= MESSAGE ================= */
 
     .message-section {
       min-height: 90vh;
+
       padding: 100px 10%;
 
       display: flex;
+
       justify-content: center;
       align-items: center;
 
@@ -159,35 +143,51 @@
       background: #111;
     }
 
+
     .message-box {
       max-width: 750px;
     }
 
+
     .message-box h2 {
       font-family: "Anton", sans-serif;
+
       font-weight: 400;
+
       font-size: 60px;
+
       margin-bottom: 40px;
     }
 
+
     .message-box p {
       font-family: Georgia, serif;
+
       font-size: 19px;
+
       line-height: 2;
+
       opacity: 0.9;
     }
+
 
 
     /* ================= FOOTER ================= */
 
     footer {
       text-align: center;
+
       padding: 40px;
+
       background: #050505;
+
       opacity: 0.6;
+
       font-size: 13px;
+
       letter-spacing: 2px;
     }
+
 
 
     /* ================= ANIMATION ================= */
@@ -196,33 +196,23 @@
 
       from {
         opacity: 0;
+
         transform: translateY(30px);
       }
 
       to {
         opacity: 1;
+
         transform: translateY(0);
       }
 
     }
 
 
+
     /* ================= MOBILE ================= */
 
     @media (max-width: 600px) {
-
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .photo {
-        width: 100%;
-        height: auto;
-      }
-
-      .section-title {
-        font-size: 45px;
-      }
 
       .message-box h2 {
         font-size: 45px;
@@ -230,6 +220,7 @@
 
       .message-box p {
         font-size: 17px;
+
         line-height: 1.9;
       }
 
@@ -252,15 +243,18 @@
         Today is your day
       </div>
 
+
       <h1 class="birthday-title">
         Happy<br>Birthday
       </h1>
+
 
       <div class="name">
         Nedya PS
       </div>
 
-      <a href="#memories" class="scroll-button">
+
+      <a href="#message" class="scroll-button">
         Scroll ↓
       </a>
 
@@ -270,67 +264,9 @@
 
 
 
-  <!-- ================= PHOTO GALLERY ================= -->
-
-  <section class="gallery-section" id="memories">
-
-    <h2 class="section-title">
-      🌟🙂‍↔️
-    </h2>
-
-
-    <div class="gallery">
-
-
-      <!-- PHOTO 1 -->
-      <img
-        src="https://i.ibb.co/G3kRgq8Z/IMG-5054.jpg"
-        class="photo"
-        alt="Birthday memory 1"
-      >
-
-
-      <!-- PHOTO 2 -->
-      <img
-        src="https://i.ibb.co/hFgjQNy7/IMG-5052.jpg"
-        class="photo"
-        alt="Birthday memory 2"
-      >
-
-
-      <!-- PHOTO 3 -->
-      <img
-        src="https://i.ibb.co/M59Jr6vj/file-00000000d6c471fa843dd8c41414f15f.png"
-        class="photo"
-        alt="Birthday memory 3"
-      >
-
-
-      <!-- PHOTO 4 -->
-      <img
-        src="https://i.ibb.co/MHfQysC/file-0000000013d87207b8ee4acff45ed4d0.png"
-        class="photo"
-        alt="Birthday memory 4"
-      >
-
-
-      <!-- PHOTO 5 -->
-      <img
-        src="https://i.ibb.co/0yF5V7KH/file-0000000022d87208a078ed52e3e6c4ed.png"
-        class="photo"
-        alt="Birthday memory 5"
-      >
-
-
-    </div>
-
-  </section>
-
-
-
   <!-- ================= BIRTHDAY MESSAGE ================= -->
 
-  <section class="message-section">
+  <section class="message-section" id="message">
 
     <div class="message-box">
 
