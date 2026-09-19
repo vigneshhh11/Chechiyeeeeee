@@ -1,314 +1,896 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Happy Birthday, Nedya PS 🎂</title>
+<title>For Nedya ❤️</title>
 
-  <!-- Anton Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4efe5;
+    color: #171717;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ================= GENERAL ================= */
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.hand {
+    font-family: "Patrick Hand", cursive;
+}
+
+.big-title {
+    font-family: "Anton", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button {
+    font-family: "DM Sans", sans-serif;
+    cursor: pointer;
+}
+
+
+/* ================= DECORATIONS ================= */
+
+.star {
+    position: absolute;
+    font-size: 28px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.star.one {
+    top: 12%;
+    left: 10%;
+}
+
+.star.two {
+    top: 20%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+.star.three {
+    bottom: 15%;
+    left: 14%;
+    animation-delay: 2s;
+}
+
+.star.four {
+    bottom: 10%;
+    right: 15%;
+    animation-delay: 0.5s;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
     }
 
-    html {
-      scroll-behavior: smooth;
+    50% {
+        transform: translateY(-12px) rotate(8deg);
     }
-
-    body {
-      background: #080808;
-      color: white;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-
-    /* ================= HERO ================= */
-
-    .hero {
-      min-height: 100vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
-      position: relative;
-      padding: 30px;
-
-      background:
-        radial-gradient(
-          circle at center,
-          #292929 0%,
-          #111 35%,
-          #080808 75%
-        );
-    }
-
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-
-      animation: fadeUp 1.5s ease;
-    }
-
-
-    .small-text {
-      font-size: 14px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-
-      opacity: 0.7;
-
-      margin-bottom: 25px;
-    }
-
-
-    .birthday-title {
-      font-family: "Anton", sans-serif;
-      font-weight: 400;
-
-      font-size: clamp(65px, 15vw, 150px);
-
-      line-height: 0.95;
-
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-
-    .name {
-      font-size: clamp(22px, 5vw, 40px);
-
-      margin-top: 25px;
-
-      letter-spacing: 6px;
-
-      text-transform: uppercase;
-    }
-
-
-    .scroll-button {
-      margin-top: 50px;
-
-      display: inline-block;
-
-      padding: 14px 28px;
-
-      border: 1px solid rgba(255,255,255,0.5);
-
-      border-radius: 50px;
-
-      color: white;
-
-      text-decoration: none;
-
-      transition: 0.3s;
-    }
-
-
-    .scroll-button:hover {
-      background: white;
-      color: black;
-
-      transform: translateY(-3px);
-    }
-
-
-
-    /* ================= MESSAGE ================= */
-
-    .message-section {
-      min-height: 90vh;
-
-      padding: 100px 10%;
-
-      display: flex;
-
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-
-      background: #111;
-    }
-
-
-    .message-box {
-      max-width: 750px;
-    }
-
-
-    .message-box h2 {
-      font-family: "Anton", sans-serif;
-
-      font-weight: 400;
-
-      font-size: 60px;
-
-      margin-bottom: 40px;
-    }
-
-
-    .message-box p {
-      font-family: Georgia, serif;
-
-      font-size: 19px;
-
-      line-height: 2;
-
-      opacity: 0.9;
-    }
-
-
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      text-align: center;
-
-      padding: 40px;
-
-      background: #050505;
-
-      opacity: 0.6;
-
-      font-size: 13px;
-
-      letter-spacing: 2px;
-    }
-
-
-
-    /* ================= ANIMATION ================= */
-
-    @keyframes fadeUp {
-
-      from {
+}
+
+
+/* ================= PASSCODE ================= */
+
+#lockScreen {
+    background:
+        radial-gradient(circle at 20% 20%, #ffe4a8 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #ffc6d9 0%, transparent 25%),
+        #f4efe5;
+}
+
+.lock-card {
+    background: #fffdf8;
+    border: 2px solid #171717;
+    padding: 35px 25px;
+    border-radius: 28px;
+    box-shadow: 8px 8px 0 #171717;
+}
+
+.lock-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.lock-card h1 {
+    font-family: "Anton", sans-serif;
+    font-size: 42px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.lock-card p {
+    margin: 15px 0 25px;
+    color: #555;
+}
+
+.code-display {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #171717;
+    border-radius: 50%;
+    margin-top: 18px;
+}
+
+.dot.filled {
+    background: #171717;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.key {
+    height: 58px;
+    border: 2px solid #171717;
+    background: white;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.15s;
+}
+
+.key:active {
+    transform: scale(0.92);
+    box-shadow: inset 0 3px 0 #ddd;
+}
+
+.error {
+    color: #d64545;
+    min-height: 22px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+
+/* ================= INTRO ================= */
+
+#intro {
+    background:
+        radial-gradient(circle at 15% 20%, #ffd9e5 0%, transparent 28%),
+        radial-gradient(circle at 85% 80%, #d9e8ff 0%, transparent 30%),
+        #f4efe5;
+}
+
+.intro-card {
+    transform: rotate(-1deg);
+}
+
+.tiny-label {
+    display: inline-block;
+    background: #171717;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.intro-title {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(60px, 17vw, 105px);
+    line-height: 0.88;
+    text-transform: uppercase;
+}
+
+.intro-title span {
+    display: block;
+}
+
+.intro-sub {
+    font-family: "Patrick Hand", cursive;
+    font-size: 28px;
+    margin-top: 25px;
+}
+
+.primary-btn {
+    margin-top: 35px;
+    padding: 15px 30px;
+    border: 2px solid #171717;
+    background: #171717;
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 5px 5px 0 #d9a441;
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    transform: translate(-2px,-2px);
+}
+
+
+/* ================= QUESTION ================= */
+
+#question {
+    background: #f7dce5;
+}
+
+.question-card {
+    background: #fffdf8;
+    border: 2px solid #171717;
+    border-radius: 28px;
+    padding: 35px 25px;
+    box-shadow: 8px 8px 0 #171717;
+}
+
+.question-card h2 {
+    font-family: "Anton", sans-serif;
+    font-size: 55px;
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.question-card p {
+    margin-top: 18px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 25px;
+}
+
+.button-row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.yes-btn,
+.no-btn {
+    border: 2px solid #171717;
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-size: 17px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.yes-btn {
+    background: #171717;
+    color: white;
+}
+
+.no-btn {
+    background: white;
+    color: #171717;
+}
+
+.yes-btn:hover,
+.no-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================= NO SCREEN ================= */
+
+#noScreen {
+    background: #e7e0f7;
+}
+
+.no-card {
+    text-align: center;
+}
+
+.no-card .emoji {
+    font-size: 70px;
+}
+
+.no-card h2 {
+    font-family: "Anton", sans-serif;
+    font-size: 55px;
+    text-transform: uppercase;
+    line-height: 0.95;
+    margin-top: 15px;
+}
+
+.no-card p {
+    font-family: "Patrick Hand", cursive;
+    font-size: 27px;
+    margin-top: 20px;
+}
+
+.try-btn {
+    margin-top: 30px;
+    background: #171717;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+/* ================= MESSAGE ================= */
+
+#message {
+    background:
+        radial-gradient(circle at 20% 20%, #ffe4b5 0%, transparent 25%),
+        #f4efe5;
+}
+
+.message-card {
+    background: #fffdf8;
+    border: 2px solid #171717;
+    border-radius: 28px;
+    padding: 40px 25px;
+    box-shadow: 8px 8px 0 #171717;
+}
+
+.message-card .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+
+.message-card h2 {
+    font-family: "Anton", sans-serif;
+    font-size: 58px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 15px 0 30px;
+}
+
+.message-text {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.message-text strong {
+    font-family: "Patrick Hand", cursive;
+    font-size: 27px;
+}
+
+
+/* ================= FINAL ================= */
+
+#final {
+    background:
+        radial-gradient(circle at center, #282828 0%, #111 45%, #080808 100%);
+    color: white;
+}
+
+.final-content {
+    animation: reveal 1.2s ease;
+}
+
+.final-small {
+    font-size: 14px;
+    letter-spacing: 5px;
+    opacity: 0.7;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.final-title {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(70px, 18vw, 130px);
+    line-height: 0.88;
+    text-transform: uppercase;
+}
+
+.final-name {
+    font-size: clamp(25px, 6vw, 40px);
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+
+.final-line {
+    width: 70px;
+    height: 2px;
+    background: white;
+    margin: 30px auto;
+}
+
+.final-text {
+    font-family: "Patrick Hand", cursive;
+    font-size: 27px;
+    opacity: 0.9;
+}
+
+@keyframes reveal {
+    from {
         opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
 
-        transform: translateY(30px);
-      }
-
-      to {
+    to {
         opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
 
-        transform: translateY(0);
-      }
 
+/* ================= TRANSITION ================= */
+
+.fade-out {
+    animation: fadeOut 0.35s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .lock-card {
+        padding: 30px 18px;
     }
 
+    .lock-card h1 {
+        font-size: 37px;
+    }
 
+    .question-card h2 {
+        font-size: 48px;
+    }
 
-    /* ================= MOBILE ================= */
+    .no-card h2 {
+        font-size: 48px;
+    }
 
-    @media (max-width: 600px) {
+    .message-card h2 {
+        font-size: 48px;
+    }
 
-      .message-box h2 {
-        font-size: 45px;
-      }
-
-      .message-box p {
+    .message-text {
         font-size: 17px;
-
-        line-height: 1.9;
-      }
-
     }
 
-  </style>
+    .star {
+        font-size: 22px;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-  <!-- ================= HERO ================= -->
+<!-- =====================================================
+     PASSCODE SCREEN
+===================================================== -->
 
-  <section class="hero">
+<section class="screen active" id="lockScreen">
 
-    <div class="hero-content">
+    <div class="star one">✦</div>
+    <div class="star two">✧</div>
+    <div class="star three">✦</div>
+    <div class="star four">✧</div>
 
-      <div class="small-text">
-        Today is your day
-      </div>
+    <div class="container">
 
+        <div class="lock-card">
 
-      <h1 class="birthday-title">
-        Happy<br>Birthday
-      </h1>
+            <div class="lock-icon">
+                🔐
+            </div>
 
+            <h1>
+                A Little Secret
+            </h1>
 
-      <div class="name">
-        Nedya PS
-      </div>
+            <p>
+                Enter the special code to unlock your surprise.
+            </p>
 
+            <div class="code-display">
+                <div class="dot" id="dot1"></div>
+                <div class="dot" id="dot2"></div>
+                <div class="dot" id="dot3"></div>
+                <div class="dot" id="dot4"></div>
+            </div>
 
-      <a href="#message" class="scroll-button">
-        Scroll ↓
-      </a>
+            <div class="keypad">
 
-    </div>
+                <button class="key" onclick="pressKey('1')">1</button>
+                <button class="key" onclick="pressKey('2')">2</button>
+                <button class="key" onclick="pressKey('3')">3</button>
 
-  </section>
+                <button class="key" onclick="pressKey('4')">4</button>
+                <button class="key" onclick="pressKey('5')">5</button>
+                <button class="key" onclick="pressKey('6')">6</button>
 
+                <button class="key" onclick="pressKey('7')">7</button>
+                <button class="key" onclick="pressKey('8')">8</button>
+                <button class="key" onclick="pressKey('9')">9</button>
 
+                <button class="key" onclick="clearCode()">C</button>
+                <button class="key" onclick="pressKey('0')">0</button>
+                <button class="key" onclick="backspace()">←</button>
 
-  <!-- ================= BIRTHDAY MESSAGE ================= -->
+            </div>
 
-  <section class="message-section" id="message">
+            <div class="error" id="error"></div>
 
-    <div class="message-box">
-
-      <h2>
-        For You, Nedya Chechiii ❤️
-      </h2>
-
-
-      <p>
-
-        So today, on your special day,<br>
-        I have just one wish to say—<br>
-        may your smile never fade,<br>
-        may happiness find you every day.<br><br>
-
-        Keep chasing every dream,<br>
-        keep being exactly who you are,<br>
-        because no matter where life takes you,<br>
-        you'll always be my brightest star. ✨<br><br>
-
-        <strong>
-          Happy Birthday, Chechii. ❤️
-        </strong>
-
-        <br>
-
-        Here's to you, today and always.
-
-      </p>
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
 
-  <!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     INTRO SCREEN
+===================================================== -->
 
-  <footer>
-    MADE WITH ❤️ FOR NEDYA PS
-  </footer>
+<section class="screen" id="intro">
 
+    <div class="star one">✦</div>
+    <div class="star two">♡</div>
+    <div class="star three">✧</div>
+    <div class="star four">✦</div>
+
+    <div class="container intro-card">
+
+        <div class="tiny-label">
+            Open this 👀
+        </div>
+
+        <h1 class="intro-title">
+            <span>I Made</span>
+            <span>Something</span>
+            <span>For You</span>
+        </h1>
+
+        <p class="intro-sub">
+            And yes... you have to press the button.
+        </p>
+
+        <button class="primary-btn" onclick="showScreen('question')">
+            Open it →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUESTION SCREEN
+===================================================== -->
+
+<section class="screen" id="question">
+
+    <div class="container">
+
+        <div class="question-card">
+
+            <div style="font-size:50px;">
+                🎁
+            </div>
+
+            <h2>
+                Ready for<br>your surprise?
+            </h2>
+
+            <p>
+                Be honest... did you actually expect this? 👀
+            </p>
+
+            <div class="button-row">
+
+                <button class="yes-btn" onclick="showScreen('message')">
+                    YES ❤️
+                </button>
+
+                <button class="no-btn" onclick="showScreen('noScreen')">
+                    NO 😐
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NO SCREEN
+===================================================== -->
+
+<section class="screen" id="noScreen">
+
+    <div class="container no-card">
+
+        <div class="emoji">
+            😭
+        </div>
+
+        <h2>
+            Why did you<br>click No?!
+        </h2>
+
+        <p>
+            That was definitely the wrong answer. 😂
+        </p>
+
+        <button class="try-btn" onclick="showScreen('question')">
+            Okay, I'll choose again
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MESSAGE SCREEN
+===================================================== -->
+
+<section class="screen" id="message">
+
+    <div class="star one">✦</div>
+    <div class="star two">♡</div>
+    <div class="star three">✧</div>
+    <div class="star four">✦</div>
+
+    <div class="container">
+
+        <div class="message-card">
+
+            <div class="label">
+                A little birthday note
+            </div>
+
+            <h2>
+                For You,<br>
+                Nedya Chechiii ❤️
+            </h2>
+
+            <div class="message-text">
+
+                So today, on your special day,<br>
+                I have just one wish to say—<br>
+                may your smile never fade,<br>
+                may happiness find you every day.<br><br>
+
+                Keep chasing every dream,<br>
+                keep being exactly who you are,<br>
+                because no matter where life takes you,<br>
+                you'll always be my brightest star. ✨<br><br>
+
+                <strong>
+                    Happy Birthday, Chechii. ❤️
+                </strong>
+
+                <br><br>
+
+                Here's to you, today and always.
+
+            </div>
+
+            <button class="primary-btn" onclick="showScreen('final')">
+                One last thing →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL SCREEN
+===================================================== -->
+
+<section class="screen" id="final">
+
+    <div class="star one">✦</div>
+    <div class="star two">✧</div>
+    <div class="star three">✦</div>
+    <div class="star four">♡</div>
+
+    <div class="container final-content">
+
+        <div class="final-small">
+            Today is your day
+        </div>
+
+        <h1 class="final-title">
+            Happy<br>
+            Birthday
+        </h1>
+
+        <div class="final-name">
+            Nedya PS
+        </div>
+
+        <div class="final-line"></div>
+
+        <div class="final-text">
+            Made with memories, wishes<br>
+            and a little bit of code. ✨
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* ================= PASSCODE ================= */
+
+const correctCode = "0927";
+
+let enteredCode = "";
+
+
+function pressKey(number) {
+
+    if (enteredCode.length >= 4) {
+        return;
+    }
+
+    enteredCode += number;
+
+    updateDots();
+
+    if (enteredCode.length === 4) {
+
+        setTimeout(() => {
+
+            if (enteredCode === correctCode) {
+
+                showScreen("intro");
+
+                enteredCode = "";
+                updateDots();
+
+            } else {
+
+                document.getElementById("error").textContent =
+                    "Hmm... that's not the secret code 👀";
+
+                enteredCode = "";
+
+                setTimeout(() => {
+                    updateDots();
+                }, 200);
+
+            }
+
+        }, 250);
+    }
+}
+
+
+function backspace() {
+
+    enteredCode = enteredCode.slice(0, -1);
+
+    document.getElementById("error").textContent = "";
+
+    updateDots();
+}
+
+
+function clearCode() {
+
+    enteredCode = "";
+
+    document.getElementById("error").textContent = "";
+
+    updateDots();
+}
+
+
+function updateDots() {
+
+    for (let i = 1; i <= 4; i++) {
+
+        const dot = document.getElementById("dot" + i);
+
+        if (i <= enteredCode.length) {
+            dot.classList.add("filled");
+        } else {
+            dot.classList.remove("filled");
+        }
+
+    }
+}
+
+
+/* ================= SCREEN SWITCHING ================= */
+
+function showScreen(id) {
+
+    const current = document.querySelector(".screen.active");
+
+    if (current) {
+        current.classList.remove("active");
+    }
+
+    const next = document.getElementById(id);
+
+    next.classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
 
 </body>
-</html>
+      </html>                  
